@@ -1,0 +1,1138 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=FangSong_GB2312:300,300italic,400,400italic,700,700italic|Courier New:300,300italic,400,400italic,700,700italic|LiSong Pro Light:300,300italic,400,400italic,700,700italic|华文琥珀:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="风的影子" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="canvas学习第二章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas学习第二章">
+<meta property="og:url" content="https://muleimulei.github.io/2017/04/07/canvas/cancas学习第二章/index.html">
+<meta property="og:site_name" content="风的影子">
+<meta property="og:description" content="canvas学习第二章">
+<meta property="og:updated_time" content="2017-07-14T13:58:46.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas学习第二章">
+<meta name="twitter:description" content="canvas学习第二章">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://muleimulei.github.io/2017/04/07/canvas/cancas学习第二章/"/>
+
+
+
+
+
+  <title> canvas学习第二章 | 风的影子 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风的影子</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-music">
+          <a href="/music" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br />
+            
+            音乐
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-image">
+          <a href="/images" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            美图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-address-card"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://muleimulei.github.io/2017/04/07/canvas/cancas学习第二章/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="穆蕾">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风的影子">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                canvas学习第二章
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T19:07:25+08:00">
+                2017-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">canvas</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>canvas学习第二章</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
+<li>ctx.fillRect(x,y,width,height) 在位置(x,y)处以宽为width，高为height绘制一个矩形</li>
+<li>ctx.strokeRect(x,y,width,height) 在位置(x,y)处以宽为width，高为height绘制一个矩形边框，他需要strokeStyle,lineWidth,lineJoin和miterLimit设置<ul>
+<li>lineCap: 线段末端的形状<ul>
+<li>butt: 默认值，端点是垂直于线段边缘的平直边缘</li>
+<li>round: 端点是在线段边缘处以线宽为直径的半圆</li>
+<li>square: 端点是在选段边缘处以线宽为长，以一半线宽为宽的矩形</li>
+</ul>
+</li>
+<li>lineJoin: 定义两条线相交产生的拐角，可将其称为连接<ul>
+<li>miter: 默认值，在连接外边缘延长相接</li>
+<li>bevel: 连接处是一个对角线斜角</li>
+<li>round: 连接处是一个圆</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ctx.clearRect(x,y,width,height) 在位置(x,y)处以宽为width和高为height清除指定区域并使其完全透明(使用透明黑作为颜色)</li>
+<li>当前路径和位图受canvas上下文控制，不属于保存的状态，保存当前状态到堆栈用：ctx.save()，调出最后存储的堆栈恢复画布用ctx.restore()</li>
+<li>高级路径画法<ol>
+<li>ctx.arc(x,y,radius,startAngle,endAngle,anticlockwise) antilockwise若为false，则顺时针画圆，若为true，则逆时针画圆</li>
+<li>ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y) 三次贝塞尔曲线</li>
+<li>ctx.quadraticCurveTo(cpx,cpy,x,y) 二次贝塞尔曲线</li>
+</ol>
+</li>
+<li>canvas裁切区域<ul>
+<li>使用ctx.save(),ctx.restore(),ctx.rect(),ctx.clip()可以完成区域裁切</li>
+</ul>
+</li>
+<li>旋转变换<ul>
+<li>ctx.setTransform(1,0,0,1,0,0)和ctx.rotate() 变换在调用setTransform()或其他变换函数后立即应用到形状与路径上。</li>
+</ul>
+</li>
+<li>缩放变换<ul>
+<li>ctx.scale() 对图像进行缩放</li>
+</ul>
+</li>
+<li>填充渐变形状 ：水平渐变，垂直渐变，对角线渐变，径向渐变<ul>
+<li>水平渐变：var gr = ctx.createLinearGradient(0,0,100,0);</li>
+<li>垂直渐变：var gr = ctx.createLinearGradient(0,0,0,100);</li>
+<li>对角线渐变：var gr = ctx.createLinearGradient(0,0,100,100);</li>
+<li>径向渐变：var gr = ctx.createRadialGradient(50,50,50,50,100);</li>
+<li>给渐变添加断点：gr.addColorStop(.5,’rgb(0,255,0)’);</li>
+<li>用图案填充：<ul>
+<li>四种填充类型：repeat,repeat-x,repeat-y,no-repeat</li>
+<li>var fill = ctx.createPattern(‘fillImg’,’repeat’);</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建阴影<ul>
+<li>shadowOffsetX和shadowOffsetY值可以是正也可以为负，负值将会在左侧和上方创建阴影，反之，将会在底部创建阴影。shadowBlur属性用来设置阴影模糊效果的程度。这三个参数不受当前canvas变换矩阵影响，shadowColor可以是任何HTML4颜色字符串。<br>以下代码是关于划线：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//round end. bevel join, at top left of canvas</span></div><div class="line">        context.strokeStyle = <span class="string">"black"</span>; <span class="comment">//need list of available colors</span></div><div class="line">        context.lineWidth=<span class="number">10</span>;</div><div class="line">        context.lineJoin=<span class="string">'bevel'</span>;</div><div class="line">        context.lineCap=<span class="string">'round'</span>;</div><div class="line">        context.beginPath();</div><div class="line">        context.moveTo(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        context.lineTo(<span class="number">25</span>, <span class="number">0</span>);</div><div class="line">        context.lineTo(<span class="number">25</span>,<span class="number">25</span>);</div><div class="line">        context.stroke();</div><div class="line">        context.closePath();</div><div class="line">        </div><div class="line">        <span class="comment">//round end, bevel join, not at top or left of canvas</span></div><div class="line">        context.beginPath();</div><div class="line">        context.moveTo(<span class="number">10</span>, <span class="number">50</span>);</div><div class="line">        context.lineTo(<span class="number">35</span>, <span class="number">50</span>);</div><div class="line">        context.lineTo(<span class="number">35</span>,<span class="number">75</span>);</div><div class="line">        context.stroke();</div><div class="line">        context.closePath();</div><div class="line">        </div><div class="line">        <span class="comment">//flat end, round join, not at top or left</span></div><div class="line">        context.lineJoin=<span class="string">'round'</span>;</div><div class="line">        context.lineCap=<span class="string">'butt'</span>;</div><div class="line">        context.beginPath();</div><div class="line">        context.moveTo(<span class="number">10</span>, <span class="number">100</span>);</div><div class="line">        context.lineTo(<span class="number">35</span>, <span class="number">100</span>);</div><div class="line">        context.lineTo(<span class="number">35</span>,<span class="number">125</span>);</div><div class="line">        context.stroke();</div><div class="line">        context.closePath();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>以下代码关于区域的裁切：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//在屏幕上绘制一个黑色的方块</span></div><div class="line">    context.fillStyle = <span class="string">"black"</span>;</div><div class="line">    context.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line">    <span class="comment">//保存当前上下文</span></div><div class="line">    context.save();</div><div class="line">    context.beginPath();</div><div class="line">    <span class="comment">//裁切画布从(0,0)到(50,50)的正方形</span></div><div class="line">    context.rect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">50</span>, <span class="number">50</span>);</div><div class="line">    context.clip();</div><div class="line">    <span class="comment">//绘制红色圆</span></div><div class="line">    context.beginPath();</div><div class="line">    context.strokeStyle = <span class="string">"red"</span>; <span class="comment">//need list of available colors</span></div><div class="line">    context.lineWidth=<span class="number">5</span>;</div><div class="line">    context.arc(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, (<span class="built_in">Math</span>.PI/<span class="number">180</span>)*<span class="number">0</span>, (<span class="built_in">Math</span>.PI/<span class="number">180</span>)*<span class="number">360</span>, <span class="literal">false</span>); <span class="comment">// full circle</span></div><div class="line">    context.stroke();</div><div class="line">    context.closePath();</div><div class="line">    context.restore();</div><div class="line">    <span class="comment">//裁切整个画布</span></div><div class="line">    context.beginPath();</div><div class="line">    context.rect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">500</span>, <span class="number">500</span>);</div><div class="line">    context.clip();</div><div class="line">    <span class="comment">//蓝色圆</span></div><div class="line">    context.beginPath();</div><div class="line">    context.strokeStyle = <span class="string">"blue"</span>;</div><div class="line">    context.lineWidth=<span class="number">5</span>;</div><div class="line">    context.arc(<span class="number">100</span>, <span class="number">100</span>, <span class="number">50</span>, (<span class="built_in">Math</span>.PI/<span class="number">180</span>)*<span class="number">0</span>, (<span class="built_in">Math</span>.PI/<span class="number">180</span>)*<span class="number">360</span>, <span class="literal">false</span>);</div><div class="line">    context.stroke();</div><div class="line">    context.closePath();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>也可将其它canvas方法配合裁切区域使用，最常见的是arc()函数</p>
+</blockquote>
+<p>以下代码是关于旋转：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//绘制黑色正方形</span></div><div class="line">    ctx.fillStyle = <span class="string">'black'</span>;</div><div class="line">    ctx.fillRect(<span class="number">20</span>,<span class="number">20</span>,<span class="number">25</span>,<span class="number">25</span>);</div><div class="line">    <span class="comment">//绘制红色正方形</span></div><div class="line">    ctx.setTransform(<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">    <span class="keyword">var</span> angle = <span class="number">45</span>*<span class="built_in">Math</span>.PI/<span class="number">180</span>,</div><div class="line">        x = <span class="number">100</span>,y=<span class="number">100</span>,width=<span class="number">50</span>,height=<span class="number">50</span>;</div><div class="line">    ctx.translate(x+<span class="number">.5</span>*width,y+<span class="number">.5</span>*height);</div><div class="line">    ctx.rotate(angle);</div><div class="line">    ctx.fillStyle = <span class="string">'red'</span>;</div><div class="line">    ctx.fillRect(<span class="number">-0.5</span>*width,<span class="number">-0.5</span>*height,width,height);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>缩放变换代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//绘制一个红色区域</span></div><div class="line">    ctx.setTransform(<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">    <span class="keyword">var</span> angle = <span class="number">45</span>*<span class="built_in">Math</span>.PI/<span class="number">180</span>,</div><div class="line">        x = <span class="number">100</span>,y=<span class="number">100</span>,width=<span class="number">50</span>,height=<span class="number">50</span>;</div><div class="line">    ctx.translate(x+<span class="number">.5</span>*width,y+<span class="number">.5</span>*height);</div><div class="line">    ctx.scale(<span class="number">2</span>,<span class="number">2</span>);</div><div class="line">    ctx.fillStyle = <span class="string">'red'</span>;</div><div class="line">    ctx.fillRect(<span class="number">-0.5</span>*width,<span class="number">-0.5</span>*height,width,height);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>渐变代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//径向渐变</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> gr = ctx.createRadialGradient(<span class="number">100</span>,<span class="number">100</span>,<span class="number">50</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">100</span>);</div><div class="line">    <span class="comment">//添加颜色断点</span></div><div class="line">    gr.addColorStop(<span class="number">0</span>,<span class="string">'rgb(255,0,0)'</span>);</div><div class="line">    gr.addColorStop(<span class="number">0.5</span>,<span class="string">'rgb(0,255,0)'</span>);</div><div class="line">    gr.addColorStop(<span class="number">1</span>,<span class="string">'rgb(0,0,255)'</span>);</div><div class="line">    <span class="comment">//使用fillStyle生成渐变</span></div><div class="line">    ctx.fillStyle = gr;</div><div class="line">    ctx.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI,<span class="literal">false</span>);</div><div class="line">    ctx.fill();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//图案填充</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">    img.src = <span class="string">'fill.gif'</span>;</div><div class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> gr = ctx.createPattern(img,<span class="string">'repeat'</span>);</div><div class="line">        ctx.fillStyle = gr;</div><div class="line">        ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">200</span>,<span class="number">200</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>阴影代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    context.fillStyle = <span class="string">'red'</span>; <span class="comment">//设置填充颜色</span></div><div class="line">    context.shadowOffsetX=<span class="number">4</span>;</div><div class="line">    context.shadowOffsetY=<span class="number">4</span>;</div><div class="line">    context.shadowColor=<span class="string">'black'</span>;</div><div class="line">    context.shadowBlur=<span class="number">4</span>; <span class="comment">//模糊度</span></div><div class="line">    context.fillRect(<span class="number">10</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);  </div><div class="line">    context.shadowOffsetX=<span class="number">-4</span>;</div><div class="line">    context.shadowOffsetY=<span class="number">-4</span>;</div><div class="line">    context.shadowColor=<span class="string">'black'</span>;</div><div class="line">    context.shadowBlur=<span class="number">4</span>;</div><div class="line">    context.fillRect(<span class="number">150</span>,<span class="number">10</span>,<span class="number">100</span>,<span class="number">100</span>);  </div><div class="line">    context.shadowOffsetX=<span class="number">10</span>;</div><div class="line">    context.shadowOffsetY=<span class="number">10</span>;</div><div class="line">    context.shadowColor=<span class="string">'rgb(100,100,100)'</span>;</div><div class="line">    context.shadowBlur=<span class="number">8</span>;</div><div class="line">    context.arc(<span class="number">200</span>, <span class="number">300</span>, <span class="number">100</span>, (<span class="built_in">Math</span>.PI/<span class="number">180</span>)*<span class="number">0</span>, (<span class="built_in">Math</span>.PI/<span class="number">180</span>)*<span class="number">360</span>, <span class="literal">false</span>);</div><div class="line">    context.fill();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/07/canvas/canvas学习第一章/" rel="next" title="canvas学习第一章">
+                <i class="fa fa-chevron-left"></i> canvas学习第一章
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/08/canvas/canvas学习第三章/" rel="prev" title="canvas学习第三章">
+                canvas学习第三章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="穆蕾" />
+          <h4 class='topic'>念念不忘<br/>必有回响</h4>
+          </div>
+          <p class="site-author-name" itemprop="name">穆蕾</p>
+           
+              <p class="site-description motion-element" itemprop="description">个人学习总结</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate" title="RSS订阅">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(
+    /*
+     * Copyright (C) 2015 Rocko (rocko.xyz) <rocko.zxp@gmail.com>
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    function go() {
+
+      var songs = [
+          "http://m2.music.126.net/3uHnH7uQAeFwUfuvEB9lrg==/3265549619475054.mp3", 
+          "http://m2.music.126.net/NnHwR2HV-1OoKZ6R5LVy4Q==/18502581673300023.mp3",
+          "http://m2.music.126.net/qv3RI4K7ABKJ0TyAdb3taw==/3250156397064860.mp3",    
+          "......"
+      ];
+
+      function S() {
+          var e = document.getElementById("audio_element_id");
+          if(e != null){
+              var index = parseInt(e.getAttribute("curSongIndex"));
+              if(index > songs.length - 2) {
+                  index = 0;
+              } else {
+                  index++;
+              }
+              e.setAttribute("curSongIndex", index);
+          }
+          e.src = i;
+          e.play()
+      }
+      function initAudioEle() {
+          var e = document.getElementById("audio_element_id");
+          if(e === null){
+            e = document.createElement("audio");
+            e.setAttribute("curSongIndex", 0);
+            e.id = "audio_element_id";
+            e.loop = false;
+            e.bgcolor = 0;
+            e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+            document.body.appendChild(e);
+            e.addEventListener("ended", function() {
+              go();
+            }, true);
+          }        
+      }
+
+      initAudioEle();
+      var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+      var i = songs[curSongIndex];
+      S();
+    })()'>
+    
+    <i class="fa fa-music"></i> 听音乐</a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/muleimulei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">穆蕾</span>
+</div>
+
+
+<!--<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div> -->
+
+<!--<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>-->
+&nbsp;&nbsp;&nbsp;&nbsp;本页点击 <span id="busuanzi_value_page_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+
+&nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="/sitemap.xml">Google网站地图</a></span>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="0,104,183"></script>
+  <!-- 小红心 -->
+<script type="text/javascript" src="/js/src/heart.js"></script>
+<script type = 'text/javascript' src='/js/src/topic.js'></script>
+</body>
+</html>
